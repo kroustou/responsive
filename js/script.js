@@ -9,12 +9,19 @@ require.config({
 require(['jquery'], function($) {
     'use strict';
     var body = $('body');
-    $(document).on('scroll', function(){
+
+     function fixed() {
         var scrollTop = $(document).scrollTop();
-        if (scrollTop > '160'){
+        if (scrollTop > '600'){
             body.addClass('fixed');
         } else {
             body.removeClass('fixed');
         }
+    }
+
+    fixed();
+
+    $(document).on('scroll', function(){
+        fixed();
     });
 });
