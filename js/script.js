@@ -2,26 +2,12 @@
 require.config({
     paths: {
         // jquery always need a path config if it's not on the root directory
-        'jquery': 'lib/jquery'
+        'jquery': 'lib/jquery',
+        'fixed': 'lib/fixed'
     }
 });
 
-require(['jquery'], function($) {
+require(['fixed'], function() {
     'use strict';
-    var body = $('body');
 
-     function fixed() {
-        var scrollTop = $(document).scrollTop();
-        if (scrollTop > '600'){
-            body.addClass('fixed');
-        } else {
-            body.removeClass('fixed');
-        }
-    }
-
-    fixed();
-
-    $(document).on('scroll', function(){
-        fixed();
-    });
 });
